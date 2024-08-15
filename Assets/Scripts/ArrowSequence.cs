@@ -6,8 +6,7 @@ public class ArrowSequence : MonoBehaviour
 {
     public List<KeyCode> arrowSequence = new List<KeyCode>();
     private int currentIndex = 0;
-    public int sequenceLength = 5; // Longitud inicial de la secuencia
-
+    public int sequenceLength = 5; 
     void Start()
     {
         GenerateRandomSequence();
@@ -19,16 +18,13 @@ public class ArrowSequence : MonoBehaviour
         {
             if (Input.GetKeyDown(arrowSequence[currentIndex]))
             {
-                // Tecla correcta, avanza en la secuencia
                 currentIndex++;
                 Debug.Log("Tecla correcta presionada!");
             }
             else if (Input.anyKeyDown)
             {
-                // Tecla incorrecta, maneja el error
                 Debug.Log("Tecla incorrecta, reiniciar secuencia!");
-                currentIndex = 0; // Reinicia la secuencia
-            }
+                currentIndex = 0; 
         }
         else
         {
