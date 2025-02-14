@@ -8,6 +8,7 @@ public class ArrowSequenceGenerator : MonoBehaviour
     public int sequenceLength = 5;
     public int maxSequenceLength = 10;
 
+
     public void GenerateRandomSequence()
     {
         arrowSequence.Clear();

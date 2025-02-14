@@ -6,6 +6,10 @@ using TMPro;
 
 public class ArrowSequenceManager : MonoBehaviour
 { 
+
+        public TilesGenerator tilesGenerator; // Referencia al script TilesGenerator
+    public GameObject objectToMove; // Referencia al prefab que deseas mover
+
  public ArrowSequenceGenerator sequenceGenerator;
     public Timer timer;
     public ScoreManager scoreManager;
@@ -26,6 +30,10 @@ public class ArrowSequenceManager : MonoBehaviour
 
     void Update()
     {
+
+          
+            
+        
         timer.UpdateTimer();
 
         if (timer.HasTimerExpired())
@@ -55,6 +63,7 @@ public class ArrowSequenceManager : MonoBehaviour
         {
             lastPressedKey = sequenceGenerator.arrowSequence[currentIndex]; 
             currentIndex++;
+            
             Debug.Log(" correcta");
         }
         else if (Input.anyKeyDown)
@@ -78,7 +87,7 @@ public class ArrowSequenceManager : MonoBehaviour
         {
             sequenceGenerator.IncreaseSequenceLength();
         }
-
+        tilesGenerator.MovePrefabForward(objectToMove);
         ResetTimerAndSequence();
     }
 
